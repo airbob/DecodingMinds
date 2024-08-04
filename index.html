@@ -10,18 +10,25 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/logo.svg" alt="YuXin Logo">
-                <span>愈心坊</span>
-            </div>
-            <ul>
-                <li><a href="#introduction">主页</a></li>
-                <li><a href="#services">服务项目</a></li>
-                <li><a href="#who-am-i">关于我们</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
-        </nav>
+        <div class="content-wrapper">
+            <nav>
+                <div class="logo">
+                    <img src="assets/logo.svg" alt="YuXin Logo">
+                    <span>愈心坊</span>
+                </div>   
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#introduction">主页</a></li>
+                    <li><a href="#services">服务项目</a></li>
+                    <li><a href="#who-am-i">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="introduction">
@@ -144,6 +151,10 @@
             <p>&copy; 2024 YuXin Healing Hub Pte Ltd. All rights reserved.</p>
         </div>
     </footer>
-
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

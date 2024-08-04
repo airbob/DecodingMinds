@@ -17,19 +17,19 @@ body {
 header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
+
 .logo {
     display: flex;
     align-items: center;
@@ -37,28 +37,52 @@ nav {
     font-weight: bold;
     color: var(--primary-color);
 }
+
 .logo img {
-    width: 40px; /* Adjust as needed */
-    height: 40px; /* Adjust as needed */
+    width: 40px;
+    height: 40px;
     margin-right: 0.5rem;
 }
-nav ul {
+
+.nav-menu {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-nav ul li {
-    margin-left: 2rem;
+
+.nav-menu li {
+    margin-left: 1.5rem;
 }
-nav ul li a {
+
+.nav-menu li a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
-nav ul li a:hover {
+
+.nav-menu li a:hover {
     color: var(--primary-color);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mobile-menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s linear;
 }
 section {
     padding: 6rem 2rem;
@@ -142,17 +166,6 @@ p {
     flex: 1;
 }
 
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .about-image {
-        flex: 0 0 200px;
-        height: 200px;
-    }
-}
 
 #services {
     background-color: var(--bg-color-2);
@@ -193,15 +206,22 @@ p {
     }
 }
 
-@media (max-width: 768px) {
-    .service-item {
-        flex: 0 0 calc(50% - 0.5rem); /* 2 items per row */
-    }
-}
-
 @media (max-width: 480px) {
     .service-item {
         flex: 0 0 100%; /* 1 item per row */
+    }
+
+    .content-wrapper {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo img {
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -261,6 +281,14 @@ p {
 }
 
 @media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+    }
+    .intro-image {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
     .contact-content {
         flex-direction: column;
         gap: 1.5rem; /* Further reduced gap for mobile */
@@ -270,15 +298,47 @@ p {
     .contact-description {
         width: 100%;
     }
-}
 
-@media (max-width: 768px) {
-    .intro-content {
+    .about-content {
         flex-direction: column;
+        gap: 2rem;
     }
-    .intro-image {
+    
+    .about-image {
+        flex: 0 0 200px;
+        height: 200px;
+    }
+
+    .service-item {
+        flex: 0 0 calc(50% - 0.5rem); /* 2 items per row */
+    }
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
         width: 100%;
-        margin-top: 2rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .content-wrapper {
+        padding: 0 1rem;
     }
 }
 
