@@ -136,10 +136,9 @@ p {
     background-position: center;
     border-radius: 10px;
 }
-#services { background-color: var(--bg-color-2); }
+
 #who-am-i {
     background-color: var(--bg-color-3);
-    padding: 6rem 0;
 }
 
 .about-content {
@@ -149,11 +148,11 @@ p {
 }
 
 .about-image {
-    flex: 0 0 300px; /* Adjust size as needed */
+    flex: 0 0 300px;
+    width: 300px;
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .about-image img {
@@ -222,6 +221,12 @@ p {
     .logo img {
         width: 30px;
         height: 30px;
+    }
+
+    .about-image {
+        flex: 0 0 150px;
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -307,6 +312,7 @@ p {
     .about-image {
         flex: 0 0 200px;
         height: 200px;
+        width: 200px;
     }
 
     .service-item {
